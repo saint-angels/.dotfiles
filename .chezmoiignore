@@ -1,0 +1,4 @@
+{{ if ne .chezmoi.os "linux" }}
+.i3
+.zshrc
+{{ end }}
