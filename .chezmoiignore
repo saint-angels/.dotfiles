@@ -1,4 +1,4 @@
-{{ if ne .chezmoi.os "linux" }}
+{{ if ne .chezmoi.os "weird_os_that_still_needs_i3_and_zsh" }}
 .i3
 .zshrc
 {{ end }}
