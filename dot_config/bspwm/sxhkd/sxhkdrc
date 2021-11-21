@@ -314,9 +314,9 @@ ctrl + shift + Escape
 Print
     scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
 
-#screeenshooter
+#maim
 ctrl + Print
-     xfce4-screenshooter
+     maim -s -u | xclip -selection clipboard -t image/png -i
 
 #Gnome-Screenshot
 ctrl + shift + Print

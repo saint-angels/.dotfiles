@@ -80,7 +80,7 @@ bspc rule -a Gnome-disks state=tiled
 bspc rule -a Xfce4-settings-manager state=tiled
 bspc rule -a Emacs state=tiled
 bspc rule -a UnityHub state=floating center=true
-bspc rule -a Anki state=floating center=true
+bspc rule -a Anki state=tiled center=true
 
 #open applications on specific workspaces
 #bspc rule -a Firefox desktop='^1' follow=on

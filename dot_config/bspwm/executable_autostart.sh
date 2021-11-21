@@ -23,7 +23,7 @@ setxkbmap -option caps:escape
 #Disable mouse acceleration
 xinput --set-prop 'pointer:Logitech G Pro ' 'libinput Accel Profile Enabled' 0, 1
 #Set mouse speed to .95%
-xinput --set-prop 'pointer:Logitech G Pro ' 'Coordinate Transformation Matrix' 0.95, 0.000000, 0.000000, 0.000000, 0.95, 0.000000, 0.000000, 0.000000, 1.000000
+xinput --set-prop 'pointer:Logitech G Pro ' 'Coordinate Transformation Matrix' 0.6, 0.000000, 0.000000, 0.000000, 0.6, 0.000000, 0.000000, 0.000000, 1.000000
 #Some ways to set your wallpaper besides variety or nitrogen
 # feh --bg-fill /usr/share/backgrounds/arcolinux/koi-fishes-1920x1080.png &
 
