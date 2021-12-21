@@ -52,7 +52,7 @@ super + F11
 
 #Rofi
 super + space
-    rofi -show drun
+    rofi -combi-modi window,drun -show combi
 
 #################################################################
 # SUPER + ... KEYS
@@ -94,18 +94,13 @@ super + v
 super + m
     pragha
 
-#urxvt
 super + Return
-    urxvt
+    alacritty
+
 
 #Xkill
 super + Escape
     xkill
-
-#Keyboard dependent
-#urxvt
-super + KP_Enter
-	urxvt
 
 #################################################################
 # SUPER + SHIFT KEYS
@@ -228,38 +223,6 @@ ctrl + alt + a
 # ALT + ... KEYS
 #################################################################
 
-#Wallpaper trash
-alt + t
-    variety -t
-
-#Wallpaper next
-alt + n
-    variety -n
-
-#Wallpaper previous
-alt + p
-    variety -p
-
-#Wallpaper favorite
-alt + f
-    variety -f
-
-#Wallpaper previous
-alt + Left
-    variety -p
-
-#Wallpaper next
-alt + Right
-    variety -n
-
-#Wallpaper toggle-pause
-alt + Up
-    variety --toggle-pause
-
-#Wallpaper resume
-alt + Down
-    variety --resume
-
 #Xfce appfinder
 alt + F2
     xfce4-appfinder --collapsed
@@ -271,31 +234,6 @@ alt + F3
 #Xlunch app launcher
 #alt + F5
 #    xlunch --config ~/.config/xlunch/default.conf --input ~/.config/xlunch/entries.dsv   
-
-
-#################################################################
-#VARIETY KEYS WITH PYWAL
-#################################################################
-
-#Wallpaper trash
-alt + shift + t
-    variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper next
-alt + shift + n
-    variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper previous
-alt + shift + p
-    variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper favorite
-alt + shift + f
-    variety -f && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper update
-alt + shift + u
-    wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
 
 #################################################################
 # CONTROL + SHIFT KEYS
@@ -329,7 +267,7 @@ ctrl + shift + Print
 
 #xfce4-terminal dropdown
 F12
-    xfce4-terminal --drop-down
+    alacritty --drop-down
 
 
 #################################################################
@@ -533,8 +471,8 @@ super + ctrl + {_,shift +}{1-9}
 #################################################################
 
 #Focus selected desktop
-alt + Tab
-	bspc desktop -f '^{1-9,10}'
+# alt + Tab
+# 	bspc desktop -f '^{1-9,10}'
 
 	#Focus selected desktop
 alt + shift + Tab
@@ -542,7 +480,18 @@ alt + shift + Tab
 
 #Rotate desktop
 alt + space
-	bspc node @/ --rotate {90,-90}
+    bspc node @/ -C {forward,backward}
+
+# Show clipmenu
+alt + v
+    CM_LAUNCHER=rofi clipmenu \
+        -location 1 \
+        -m -3 \
+        -no-show-icons \
+        -theme-str '* \{ font: 10px; \}' \
+        -theme-str 'listview \{ spacing: 0; \}' \
+        -theme-str 'window \{ width: 20em; \}'
+
 
 #################################################################
 # ALT + SHIFT KEYS
