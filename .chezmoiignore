@@ -2,3 +2,4 @@
 .i3
 .zshrc
 {{ end }}
+.doom.d/custom.el

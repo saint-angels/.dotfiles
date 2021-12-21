@@ -43,7 +43,7 @@
        ophints           ; highlight the region an operation acts on
        (popup +defaults)   ; tame sudden yet inevitable temporary windows
        ;;tabs              ; a tab bar for Emacs
-       ;;treemacs          ; a project drawer, like neotree but cooler
+       treemacs          ; a project drawer, like neotree but cooler
        unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
@@ -75,13 +75,8 @@
        :term
        ;;eshell            ; the elisp shell that works everywhere
        ;;term              ; basic terminal emulator for Emacs
-       {{- if eq .chezmoi.os "windows" }}
-       shell               ; simple shell REPL for Emacs
-       ;;vterm             ; the best terminal emulation in Emacs
-       {{- else }}
        vterm             ; the best terminal emulation in Emacs
        ;;shell               ; simple shell REPL for Emacs
-       {{- end }}
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
@@ -172,7 +167,7 @@
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        ;;web               ; the tubes
-       ;;yaml              ; JSON, but readable
+       yaml              ; JSON, but readable
        ;;zig               ; C, but simpler
 
        :email

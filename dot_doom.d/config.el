@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "kou"
-      user-mail-address "mikeprokofyev@gmail.com")
+(setq user-full-name "y.t."
+      user-mail-address "y.t@posteo.jp")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -19,10 +19,8 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-{{- if eq .chezmoi.os "windows" }}
-(setq doom-font (font-spec :family "Iosevka SS15 Extended" :size 20 )
-       doom-variable-pitch-font (font-spec :family "sans" :size 21))
-{{- end }}
+(setq doom-font (font-spec :family "JetBrains Mono" :size 20 :weight 'regular)
+      doom-big-font (font-spec :family "JetBrains Mono" :size 30))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -143,3 +141,6 @@
         (setq projectile-indexing-method 'native)
         (setq projectile-globally-ignored-file-suffixes '(".meta" ".meta2example"))
 )
+
+;; (after! magit
+;;   (magit-delta-mode +1))
