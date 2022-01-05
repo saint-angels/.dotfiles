@@ -313,11 +313,11 @@ XF86AudioStop
 
 #Brightness up
 XF86MonBrightnessUp
-    xbacklight -inc 10
+    macbook-lighter-screen --inc 100
 
 #Brightness down
 XF86MonBrightnessDown
-    xbacklight -dec 10
+    macbook-lighter-screen --dec 100
 
 #########################
 #        POLYBAR        #

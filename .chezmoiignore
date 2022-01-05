@@ -3,3 +3,4 @@
 .zshrc
 {{ end }}
 .doom.d/custom.el
+.config/fcitx5
