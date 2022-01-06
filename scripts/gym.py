@@ -41,6 +41,7 @@ for key in result:
     total_weight += exercise_sum
     print(f"\t{translated_name}: {result[key]}x{reps} = {exercise_sum}kg")
 
-print(f"\tпродолжительность: {int(args.duration)}м.")
-intensity = int(total_weight / float(args.duration))
-print(f"\tинтенсивность: {intensity}\n")
+if float(args.duration) != 0:
+    print(f"\tпродолжительность: {int(args.duration)}м.")
+    intensity = int(total_weight / float(args.duration))
+    print(f"\tинтенсивность: {intensity}\n")

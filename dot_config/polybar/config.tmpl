@@ -123,7 +123,7 @@ font-4 = "Source Han Sans CN:size=13;0"
 
 modules-left = bspwm
 modules-center = xwindow
-{{- if (eq .chassistype "desktop") -}}
+{{ if (eq .chassistype "desktop") }}
 modules-right = pavolume memory2 cpu2 date
 {{ else if (eq .chassistype "laptop" ) }}
 modules-right = pavolume memory2 cpu2 date battery

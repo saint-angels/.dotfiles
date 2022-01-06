@@ -44,7 +44,7 @@ picom --config $HOME/.config/bspwm/picom.conf --experimental-backends &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 run volumeicon &
-{{- if (eq .chassistype "desktop") -}}
+{{ if (eq .chassistype "desktop") }}
 nvidia-settings --assign CurrentMetaMode="DPY-0: nvidia-auto-select +0+0 { ViewPortIn=3072x1728, ViewPortOut=3840x2160+0+0, ForceFullCompositionPipeline = On }, DPY-2: nvidia-auto-select @1920x1080 +3072+0 {ViewPortIn=1920x1080, ViewPortOut=1920x1080+0+0, ForceFullCompositionPipeline = On}" &
 {{ else if (eq .chassistype "laptop" ) }}
 xrandr --output eDP-1 --scale 0.7x0.7
