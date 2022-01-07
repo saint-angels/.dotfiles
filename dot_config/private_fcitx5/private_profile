@@ -24,21 +24,6 @@ Name=pinyin
 # Layout
 Layout=
 
-[Groups/1]
-# Group Name
-Name=ru
-# Layout
-Default Layout=us
-# Default Input Method
-DefaultIM=keyboard-ru
-
-[Groups/1/Items/0]
-# Name
-Name=keyboard-ru
-# Layout
-Layout=
-
 [GroupOrder]
 0=default
-1=ru
 
