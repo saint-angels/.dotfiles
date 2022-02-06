@@ -256,6 +256,9 @@ Print
 ctrl + Print
      maim -s -u | xclip -selection clipboard -t image/png -i
 
+super + shift + 4
+     maim -s -u | xclip -selection clipboard -t image/png -i
+
 #Gnome-Screenshot
 ctrl + shift + Print
      gnome-screenshot -i
