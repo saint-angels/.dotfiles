@@ -39,7 +39,7 @@ run nm-applet &
 run pamac-tray &
 run xfce4-power-manager &
 numlockx on &
-run qbittorrent &
+( sleep 5 ; run qbittorrent ) &
 blueberry-tray &
 picom --experimental-backends &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
