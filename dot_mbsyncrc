@@ -1,0 +1,26 @@
+# imap account information
+IMAPAccount gmail
+Host imap.gmail.com
+User mikeprokofyev@gmail.com
+Pass qefnotexlzesjdkz
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/cert.pem
+
+# remote storage (use the imap account specified above)
+IMAPStore gmail-remote
+Account gmail
+
+# local storage
+MaildirStore gmail-local
+Path ~/.mail/
+Inbox ~/.mail/Inbox
+Subfolders Verbatim
+
+# channel to remote storage
+Channel gmail
+Far :gmail-remote:
+Near :gmail-local:
+Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Bin"
+Create Both
+SyncState *
