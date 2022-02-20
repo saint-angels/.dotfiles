@@ -1,3 +1,9 @@
+#mu init --maildir ~/.mail --my-address=mikeprokofyev@gmail.com --my-address=y_t@posteo.net
+#mu index
+
+#######
+#GMAIL
+#######
 # imap account information
 IMAPAccount gmail
 Host imap.gmail.com
@@ -8,6 +14,7 @@ PassCMD "gpg2 -q --for-your-eyes-only --no-tty -d ~/.emacs.d/.mbsync_gmail_pass.
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/cert.pem
+
 
 # remote storage (use the imap account specified above)
 IMAPStore gmail-remote
@@ -24,5 +31,37 @@ Channel gmail
 Far :gmail-remote:
 Near :gmail-local:
 Patterns * ![Gmail]*  "[Gmail]/Starred" "[Gmail]/Sent Mail" "[Gmail]/All Mail" "[Gmail]/Trash"
+Create Both
+SyncState *
+
+#######
+#POSTEO
+#######
+IMAPAccount posteo
+Host posteo.de
+Port 993
+User y_t@posteo.net
+# create gpg by encoding a plaintext password
+# gpg2 --output .mbsync_posteo_pass.gpg --symmetric .mbsync_posteo_pass
+PassCMD "gpg2 -q --for-your-eyes-only --no-tty -d ~/.emacs.d/.mbsync_posteo_pass.gpg"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/cert.pem
+
+IMAPStore posteo-remote
+Account posteo
+
+# local storage
+MaildirStore posteo-local
+Path ~/.mail/posteo/
+Inbox ~/.mail/posteo/Inbox
+Trash ~/.mail/posteo/Trash
+Subfolders Verbatim
+
+# channel to remote storage
+Channel posteo
+Far :posteo-remote:
+Near :posteo-local:
+Patterns *
 Create Both
 SyncState *
