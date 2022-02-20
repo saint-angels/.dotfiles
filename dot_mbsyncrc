@@ -2,7 +2,9 @@
 IMAPAccount gmail
 Host imap.gmail.com
 User mikeprokofyev@gmail.com
-Pass qefnotexlzesjdkz
+# create gpg by encoding a plaintext password
+# gpg2 --output .mbsync_gmail_pass.gpg --symmetric .mbsync_gmail_pass
+PassCMD "gpg2 -q --for-your-eyes-only --no-tty -d ~/.emacs.d/.mbsync_gmail_pass.gpg"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/cert.pem
@@ -13,14 +15,14 @@ Account gmail
 
 # local storage
 MaildirStore gmail-local
-Path ~/.mail/
-Inbox ~/.mail/Inbox
+Path ~/.mail/gmail/
+Inbox ~/.mail/gmail/Inbox
 Subfolders Verbatim
 
 # channel to remote storage
 Channel gmail
 Far :gmail-remote:
 Near :gmail-local:
-Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Bin"
+Patterns * ![Gmail]*  "[Gmail]/Starred" "[Gmail]/Sent Mail" "[Gmail]/All Mail" "[Gmail]/Trash"
 Create Both
 SyncState *
