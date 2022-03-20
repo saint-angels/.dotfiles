@@ -33,13 +33,14 @@ dex /usr/share/applications/org.fcitx.Fcitx5.desktop
 xsetroot -cursor_name left_ptr &
 run sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
 
-conky -c $HOME/.config/bspwm/system-overview &
+# conky -c $HOME/.config/bspwm/system-overview &
 run variety &
 run nm-applet &
 run pamac-tray &
 run xfce4-power-manager &
 numlockx on &
-( sleep 5 ; run qbittorrent ) &
+# don't autorun qbittorrent in turkey
+# ( sleep 5 ; run qbittorrent ) &
 blueberry-tray &
 picom --experimental-backends &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
