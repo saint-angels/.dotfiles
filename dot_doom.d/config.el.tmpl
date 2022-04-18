@@ -6,8 +6,64 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "y.t."
+(setq user-full-name "michael"
       user-mail-address "y.t@posteo.jp")
+
+;; (set-email-account!
+;;  "gmail"
+;;  '((mu4e-sent-folder       . "/[Gmail]/Sent Mail")
+;;    (mu4e-trash-folder      . "/[Gmail]/Bin")
+;;    (smtpmail-smtp-user     . "mikeprokofyev@gmail.com"))
+;;  t)
+(with-eval-after-load 'mu4e
+  (setq mu4e-get-mail-command "mbsync -a"
+        mu4e-root-maildir "~/.mail"
+        mu4e-update-interval (* 10 60)
+        ;; send emails with format=flowed
+        mu4e-compose-format-flowed t
+        ;; no need to run cleanup after indexing for gmail
+        ;; mu4e-index-cleanup nil
+        ;; mu4e-index-lazy-check t
+        ;; more sensible date format
+        ;; mu4e-headers-date-format "%d.%m.%y"
+        mu4e-change-filenames-when-moving t
+        mu4e-compose-signature "Cheers,\nMichael."
+        mu4e-maildir-shortcuts
+        '(("/gmail/Inbox"             . ?i)
+          ("/gmail/[Gmail]/Sent Mail" . ?s))
+        mu4e-contexts
+        (list
+         (make-mu4e-context
+          :name "gmail"
+          :match-func (lambda (msg)
+                        (when msg
+                          (string-prefix-p "/gmail" (mu4e-message-field msg :maildir))))
+          :vars '(
+                  (user-mail-address . "mikeprokofyev@gmail.com")
+                  (user-full-name    . "Michael")
+                  (mu4e-drafts-folder  . "/gmail/Drafts")
+                  (mu4e-sent-folder  . "/gmail/[Gmail]/Sent Mail")
+                  (mu4e-refile-folder  . "/gmail/[Gmail]/All Mail")
+                  (mu4e-trash-folder  . "/gmail/[Gmail]/Trash")
+                  )
+          )
+         (make-mu4e-context
+          :name "posteo"
+          :match-func (lambda (msg)
+                        (when msg
+                          (string-prefix-p "/posteo" (mu4e-message-field msg :maildir))))
+          :vars '(
+                  (user-mail-address . "y_t@posteo.net")
+                  (user-full-name    . "Michael")
+                  (mu4e-drafts-folder  . "/posteo/Drafts")
+                  (mu4e-sent-folder  . "/posteo/Sent")
+                  (mu4e-trash-folder  . "/posteo/Trash")
+                  )
+          )
+         )
+        )
+  )
+
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -65,7 +121,7 @@
   ;; (add-to-list 'lsp-file-watch-ignored-files "[/\\\\]\\.my-files\\'")
   (setq lsp-ui-sideline-show-code-actions nil)
 (setq lsp-ui-doc-enable nil)
-(setq lsp-lens-enable t)
+;; (setq lsp-lens-enable t) ;;lsp-lens are too slow for big projects
   )
 
 ; Iterate through CamelCase words
