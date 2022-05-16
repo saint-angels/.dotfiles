@@ -76,7 +76,7 @@ super + c
 
 #arcolinux-logout
 super + x
-    arcolinux-logout
+    archlinux-logout
 
 #Rofi theme selector
 super + r
@@ -119,9 +119,9 @@ super + shift + Return
 super + shift + d
 	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
-#reload sxhkd:
-# super + shift + s
-# 	pkill -USR1 -x sxhkd
+reload sxhkd:
+super + ctrl + shift + s
+	pkill -USR1 -x sxhkd
 
 
 #################################################################
@@ -253,7 +253,7 @@ ctrl + Print
      maim -s -u | xclip -selection clipboard -t image/png -i
 
 super + shift + s
-     maim -s -u | xclip -selection clipboard -t image/jpeg -i
+     maim -s -u | xclip -selection clipboard -t image/png -i
 
 #Gnome-Screenshot
 ctrl + shift + Print
