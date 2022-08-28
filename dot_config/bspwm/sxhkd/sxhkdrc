@@ -120,7 +120,7 @@ super + shift + d
 	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
 reload sxhkd:
-super + ctrl + shift + s
+super + shift + x
 	pkill -USR1 -x sxhkd
 
 
@@ -255,10 +255,14 @@ ctrl + Print
 super + shift + s
      maim -s -u | xclip -selection clipboard -t image/png -i
 
-#Gnome-Screenshot
-ctrl + shift + Print
-     gnome-screenshot -i
 
+#screen recording
+super + shift + ctrl + s
+    ffcast -q $(while slop -q -n -f '-g %g ';do :;done) rec /tmp/rec-%s.mp4
+
+#End the most recently started screencast session
+super + shift + ctrl + x
+    pkill -fxn '(/\S+)*ffmpeg\s.*\sx11grab\s.*'
 
 #################################################################
 #     FUNCTION KEYS
