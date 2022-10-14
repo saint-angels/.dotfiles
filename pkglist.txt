@@ -1,0 +1,13 @@
+chezmoi
+maim
+xclip
+ripgrep
+fd
+unityhub-beta
+jetbrains-toolbox
+cmake
+fcitx5
+fcitx5-chinese-addons
+fcitx5-configtool
+fcitx5-gtk
+fcitx5-qt
