@@ -32,7 +32,6 @@ xsetroot -cursor_name left_ptr &
 run sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
 
 # conky -c $HOME/.config/bspwm/system-overview &
-run variety &
 run nm-applet &
 run pamac-tray &
 run xfce4-power-manager &
@@ -44,7 +43,8 @@ picom --experimental-backends &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 run volumeicon &
 {{ if (eq .chassistype "desktop") }}
-nvidia-settings --assign CurrentMetaMode="DPY-0: nvidia-auto-select +0+0 { ViewPortIn=3072x1728, ViewPortOut=3840x2160+0+0, ForceFullCompositionPipeline = On }, DPY-2: nvidia-auto-select @1920x1080 +3072+0 {ViewPortIn=1920x1080, ViewPortOut=1920x1080+0+0, ForceFullCompositionPipeline = On}" &
+nvidia-settings --assign CurrentMetaMode="DPY-5: 2560x1440_144 @2560x1440 +0+0
+  {ViewPortIn=2560x1440, ViewPortOut=2560x1440+0+0, ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}" &
 {{ else if (eq .chassistype "laptop" ) }}
 xrandr --output eDP-1 --scale 0.7x0.7
 {{ end }}
