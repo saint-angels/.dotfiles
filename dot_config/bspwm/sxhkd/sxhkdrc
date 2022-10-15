@@ -6,14 +6,6 @@
 # SUPER + FUNCTION KEYS
 #################################################################
 
-# Vivaldi
-super + F1
-	vivaldi-stable
-
-# Atom
-super + F2
-	atom
-
 #Inkscape
 super + F3
     inkscape
@@ -26,14 +18,6 @@ super + F4
 super + F5
     meld
 
-#Vlc
-super + F6
-    vlc --video-on-top
-
-#Virtualbox
-super + F7
-    virtualbox
-
 #Thunar
 super + F8
     thunar
@@ -41,10 +25,6 @@ super + F8
 #Evolution
 super + F9
     evolution
-
-#Spotify
-super + F10
-    spotify
 
 #Rofi Fullscreen
 super + F11
@@ -58,14 +38,6 @@ super + space
 # SUPER + ... KEYS
 #################################################################
 
-#Atom
-super + e
-    atom
-
-#Browser
-super + w
-    vivaldi-stable
-
 #Conky-toggle
 super + c
     conky-toggle
@@ -77,10 +49,6 @@ super + c
 #arcolinux-logout
 super + x
     archlinux-logout
-
-#Rofi theme selector
-super + r
-    rofi-theme-selector
 
 #Urxvt
 super + t
@@ -95,7 +63,7 @@ super + m
     pragha
 
 super + Return
-    alacritty
+    alacritty -e fish
 
 
 #Xkill
@@ -192,18 +160,6 @@ ctrl + alt + r
 ctrl + alt + s
    spotify
 
-#urxvt
-ctrl + alt + Return
-    urxvt
-
-#urxvt
-ctrl + alt + t
-    urxvt
-
-#Vivaldi
-ctrl + alt + v
-    vivaldi-stable
-
 #Xfce4-appfinder
 ctrl + alt + a
     xfce4-appfinder
@@ -263,15 +219,6 @@ super + shift + ctrl + s
 #End the most recently started screencast session
 super + shift + ctrl + x
     pkill -fxn '(/\S+)*ffmpeg\s.*\sx11grab\s.*'
-
-#################################################################
-#     FUNCTION KEYS
-#################################################################
-
-#xfce4-terminal dropdown
-F12
-    alacritty --drop-down
-
 
 #################################################################
 #     MULTIMEDIA KEYS
