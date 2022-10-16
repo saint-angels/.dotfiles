@@ -1,9 +1,16 @@
+#!/bin/bash
+
 chezmoi
 maim
 xclip
 ripgrep
 fd
 unityhub-beta
+mono
+dotnet-runtime
+dotnet-sdk
+mono-msbuild
+mono-msbuild-sdkresolver
 jetbrains-toolbox
 cmake
 fcitx5
