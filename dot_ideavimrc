@@ -1,0 +1,22 @@
+let mapleader = "\<SPACE>"
+
+
+set incsearch
+set ignorecase
+set smartcase
+set easymotion
+set commentary
+set clipboard+=unnamed
+
+" this remap while in visiual mode
+" will delete what is currently highlighted and replace it
+" with what is in the register BUT it will YANK (delete) it
+" to a VOID register. Meaning I still have what I originally had
+" when I pasted. I don't loose the previous thing I YANKED!
+" vnoremap <leader>p "_dP
+vnoremap d "_d
+
+
+" Splitting Windows
+nmap <Leader>wh :split<CR>
+nmap <Leader>wv :vsplit<CR>
