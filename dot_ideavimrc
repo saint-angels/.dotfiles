@@ -14,7 +14,7 @@ set clipboard+=unnamed
 " to a VOID register. Meaning I still have what I originally had
 " when I pasted. I don't loose the previous thing I YANKED!
 " vnoremap <leader>p "_dP
-vnoremap d "_d
+" vnoremap d "_d
 
 
 " Splitting Windows
