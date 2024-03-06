@@ -1,0 +1,21 @@
+set clipboard^=unnamed,unnamedplus
+
+" Make sure space doesn't have any mapping
+nnoremap <SPACE> <Nop>
+vnoremap <SPACE> <Nop>
+" make space the leader key
+let mapleader=" "
+
+" Make d delete without yanking
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+
+" Delete WITH yanking
+nnoremap <leader>d d
+nnoremap <leader>D D
+vnoremap <leader>d d
+
+" replace selected text with default register without yanking it
+vnoremap p P
