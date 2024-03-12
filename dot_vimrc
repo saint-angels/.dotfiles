@@ -6,16 +6,17 @@ vnoremap <SPACE> <Nop>
 " make space the leader key
 let mapleader=" "
 
-" Make d delete without yanking
+" Make x delete without yanking
 nnoremap x "_x
-nnoremap d "_d
-nnoremap D "_D
-vnoremap d "_d
+" Delete without yanking by default
+"nnoremap d "_d
+"nnoremap D "_D
+"vnoremap d "_d
 
-" Delete WITH yanking
-nnoremap <leader>d d
-nnoremap <leader>D D
-vnoremap <leader>d d
+" Delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+nnoremap <leader>D "_D
 
 " replace selected text with default register without yanking it
 vnoremap p P
