@@ -1,10 +1,19 @@
+" --------------------------------------
+" STUFF THAT Obsidian supports
+" --------------------------------------
 set clipboard^=unnamed,unnamedplus
 
-" Make sure space doesn't have any mapping
-nnoremap <SPACE> <Nop>
-vnoremap <SPACE> <Nop>
-" make space the leader key
-let mapleader=" "
+" replace selected text with default register without yanking it
+vnoremap p P
+
+" Have j and k navigate visual lines rather than logical ones
+nmap j gj
+nmap k gk
+" I like using H and L for beginning/end of line
+nmap H ^
+nmap L $
+" Quickly remove search highlights
+nmap <F9> :nohl
 
 " Make x delete without yanking
 nnoremap x "_x
@@ -13,10 +22,17 @@ nnoremap x "_x
 "nnoremap D "_D
 "vnoremap d "_d
 
+" --------------------------------------
+" STUFF THAT ONLY NVIM AND RIDER SUPPORT
+" --------------------------------------
+
+" Make sure space doesn't have any mapping
+nnoremap <SPACE> <Nop>
+vnoremap <SPACE> <Nop>
+" make space the leader key
+let mapleader=" "
+
 " Delete without yanking
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 nnoremap <leader>D "_D
-
-" replace selected text with default register without yanking it
-vnoremap p P
