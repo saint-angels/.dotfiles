@@ -1,20 +1,79 @@
-source ~/.vimrc
+" ~/.ideavimrc - IdeaVim Configuration
 
-
+" --------------------------------------
+" GENERAL SETTINGS
+" --------------------------------------
+set clipboard^=unnamed,unnamedplus
 set incsearch
+set hlsearch
 set ignorecase
 set smartcase
 set easymotion
 set commentary
-
-
-" Splitting Windows
-nmap <Leader>wh :split<CR>
-nmap <Leader>wv :vsplit<CR>
-
-""" Idea specific settings ------------------
 set ideajoin
 
+" --------------------------------------
+" KEY MAPPINGS
+" --------------------------------------
+
+" Make space the leader key
+let mapleader=" "
+nnoremap <SPACE> <Nop>
+vnoremap <SPACE> <Nop>
+
+" Navigation
+" Navigate visual lines with j
+nmap j gj
+" Navigate visual lines with k
+nmap k gk
+" Jump to start of line with H
+nmap H ^
+" Jump to end of line with L
+nmap L $
+
+" Clipboard operations
+" Replace without yanking
+vnoremap p P
+" Make x delete without yanking
+nnoremap x "_x
+
+" Leader mappings for deletion
+" Delete without yanking
+nnoremap <leader>d "_d
+" Delete without yanking (visual mode)
+vnoremap <leader>d "_d
+" Delete to end of line without yanking
+nnoremap <leader>D "_D
+
+" Window management
+" Horizontal split
+nmap <Leader>wh :split<CR>
+" Vertical split
+nmap <Leader>wv :vsplit<CR>
+" Move focus to left window
+nmap <C-h> <C-w>h
+" Move focus to right window
+nmap <C-l> <C-w>l
+
+" Quick actions
+" Clear search highlights
+nmap <F9> :nohl<CR>
+
+" --------------------------------------
+" IDEA SPECIFIC ACTIONS
+" --------------------------------------
+" Refactoring menu
 nmap <leader>r <Action>(Refactorings.QuickListPopupAction)
+" Refactoring menu (visual)
 vmap <leader>r <Action>(RefactoringMenu)
+" Reformat code
 vmap <leader>f <Action>(ReformatCode)
+" Find in path
+nmap <leader>/ <Action>(FindInPath)
+" Search everywhere
+nmap <leader>s <Action>(SearchEverywhere)
+" Select in project view
+nmap <leader>. <Action>(SelectInProjectView)
+
+" Jump to things!
+" map alt+; <Action>(AceAction)
