@@ -42,10 +42,10 @@ picom --experimental-backends &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 run volumeicon &
-{{ if (eq .chassistype "desktop") }}
+{{ if (eq .chassisType "desktop") }}
 nvidia-settings --assign CurrentMetaMode="DPY-5: 2560x1440_144 @2560x1440 +0+0
   {ViewPortIn=2560x1440, ViewPortOut=2560x1440+0+0, ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}" &
-{{ else if (eq .chassistype "laptop" ) }}
+{{ else if (eq .chassisType "laptop" ) }}
 xrandr --output eDP-1 --scale 0.7x0.7
 {{ end }}
 mpv "$HOME/Music/Windows 95 Startup Sound.mp3" --volume=40 --no-video &

@@ -2,4 +2,16 @@
 .i3
 .zshrc
 {{ end }}
+
+{{ if eq .chezmoi.os "darwin" }}
+.config/bspwm
+.config/polybar
+.config/picom.conf
+.config/aerc
+.config/mimeapps.list
+.xprofile
+.mbsyncrc
+Music/Windows 95 Startup Sound.mp3
+scripts/default packages
+{{ end }}
 .doom.d/custom.el
