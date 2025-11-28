@@ -1,5 +1,2 @@
 [data]
-    chassistype = "desktop"
-[merge]
-    command = "meld"
-    # args = ["--merge", "{{ .Destination }}", "{{ .Target }}"]
+    chassisType = "desktop"
