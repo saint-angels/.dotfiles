@@ -75,5 +75,20 @@ nmap <leader>s <Action>(SearchEverywhere)
 " Select in project view
 nmap <leader>. <Action>(SelectInProjectView)
 
+" Quick search shortcuts (match nvim config)
+" Ctrl+F - Find files by name
+nmap <C-f> <Action>(GotoFile)
+" Ctrl+G - Grep/Find in files
+nmap <C-g> <Action>(FindInPath)
+
 " Jump to things!
 " map alt+; <Action>(AceAction)
+
+" --------------------------------------
+" EASYMOTION (IdeaVim-EasyMotion plugin)
+" --------------------------------------
+" Match nvim flash.nvim keybindings
+" Jump to character (like flash.nvim 's')
+map s <Plug>(easymotion-s)
+" Jump by word (alternative)
+map S <Plug>(easymotion-w)
