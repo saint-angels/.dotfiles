@@ -15,3 +15,4 @@ Music/Windows 95 Startup Sound.mp3
 scripts/default packages
 {{ end }}
 .doom.d/custom.el
+.DS_Store
